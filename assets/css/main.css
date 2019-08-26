@@ -1,0 +1,103 @@
+/* font-family: 'Cookie', cursive; */
+@import url('https://fonts.googleapis.com/css?family=Cookie&display=swap');
+
+/* font-family: 'Open Sans', sans-serif; */
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&display=swap');
+body {
+    margin: 0 auto;
+    background-image: url("../img/04-BG.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; 
+}
+  /*Utilizando Custom Properties*/
+:root{
+     --cor-bg-topo:#ACD0B6;
+     --cor-fonte-h1:#E3EECC;
+     --cor-bg-botao:#71A397;
+  }
+.topo{
+    background-color: var(--cor-bg-topo);
+    margin-bottom: 20px;
+}
+/*Utilizando grid e suas propriedades para centralizar a logo*/
+.topo .logo{
+    margin: 0 auto;
+    padding:20px;
+    display: grid; 
+    grid-area: header;
+    justify-content: center;
+}
+/*Flexbox para centralizar o conteúdo principal da página*/
+.container_principal{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 auto;
+    max-width: 415px;
+}
+.container_principal h1 {
+    font-family: 'Cookie', cursive;
+    font-size: 71px;
+    font-weight: normal;
+    line-height: 50px;
+    color:  var(--cor-fonte-h1);
+    text-align: center;
+    display: flex;
+    flex: 1;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+ }
+.container form {
+    /*Flexbox aplicado a área do formulario*/
+   display: flex;
+   flex-direction: column;
+    /*O flex :1 é para que cada item do formulario prencha a largura especificada no container */
+   flex: 1;
+}
+input[type="text"]{
+   height:50px;
+   border: 0px;
+   border-radius: 5px;
+   margin-bottom: 25px;
+   font-family: 'Open Sans', light;
+   font-size: 18px;
+}
+textarea{
+    height:120px;
+    margin-bottom: 25px;
+    font-family: 'Open Sans', light;
+    font-size: 18px;
+    border: 0px;
+    border-radius: 5px;
+    resize: none;
+}
+input::placeholder, textarea::placeholder{
+    padding-top: 5px;
+    padding-left: 15px;
+    color: #3E5D5F;
+    font-family: 'Open Sans', light;
+    font-size: 18px;
+    font-weight: lighter;
+}
+input[type="submit"]{
+   height: 50px;
+   background-color:  var(--cor-bg-botao);
+   color: #fff;
+   border: 0px;
+   border-radius: 5px;
+   box-shadow: 0.2px 5px 0.2px #4A8978;
+   font-family: 'Open Sans';
+   font-weight: bold;
+   font-size: 22px;
+   text-transform: uppercase;
+   color: #fff;
+}
+/*media query para o formulario ficar se ajustar em menores resoluçoes de tela*/
+@media (max-width: 768px){
+ .container_principal{
+     max-width: 300px;
+     margin-bottom: 30px;
+  }
+}
